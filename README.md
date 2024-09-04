@@ -121,7 +121,7 @@ Additional Information
 
 # License
 
-This project is licensed under the [Mohit Tiwari GitHub Repository License](https://github.com/mohit-tiwari/lamp-setup/blob/main/LICENSE).
+This project is licensed under the [Mohit Tiwari GitHub Repository License](https://github.com/Mohit722//LICENSE).
 
 
 # Contact
