@@ -121,7 +121,7 @@ Additional Information
 
 # License
 
-This project is licensed under the [Mohit Tiwari GitHub Repository License](https://github.com/Mohit722//LICENSE).
+This project is licensed under the https://github.com/Mohit722/ansible-lamp-stack-setup/blob/master/LICENSE
 
 
 # Contact
