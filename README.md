@@ -27,7 +27,7 @@ Cloning the Repository
 
 Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/lamp-setup.git
+git clone https://github.com/Mohit722/ansible-lamp-stack-setup.git
 cd lamp-setup
 
 Configuration
