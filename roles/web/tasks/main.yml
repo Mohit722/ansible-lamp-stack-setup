@@ -1,0 +1,21 @@
+---
+- name: Install Apache and PHP
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apache2
+    - php
+    - php-mysql
+    - git
+
+- name: Start Apache service
+  service:
+    name: apache2
+    state: started
+    enabled: yes
+
+- name: Create the index.php file
+  template:
+    src: index.php.j2
+    dest: /var/www/html/index.php

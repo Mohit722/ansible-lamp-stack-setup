@@ -1,0 +1,15 @@
+---
+# handlers file for common
+
+- name: Restart chronyd
+  systemd:
+    name: chronyd
+    state: restarted
+    enabled: yes
+
+
+
+
+
+
+# Restart chronyd: This handler restarts the chronyd service whenever it's triggered, ensuring the changes take effect.

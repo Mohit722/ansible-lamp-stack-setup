@@ -1,0 +1,24 @@
+---
+# tasks/main.yml for common role
+
+- name: Remove conflicting curl-minimal package
+  apt:
+    name: curl-minimal
+    state: absent
+  ignore_errors: yes
+
+- name: Install essential packages
+  apt:
+    name:
+      - chrony  # Use chrony instead of ntp
+      - curl  # Ensure curl is installed
+      - vim
+      - git
+      - wget
+    state: present
+
+- name: Start and enable chrony service
+  ansible.builtin.service:
+    name: chronyd
+    state: started
+    enabled: yes

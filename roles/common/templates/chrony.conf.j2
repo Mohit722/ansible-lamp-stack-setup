@@ -1,0 +1,14 @@
+
+# /etc/chrony.conf template for Amazon Linux
+
+server 169.254.169.123 prefer iburst minpoll 4 maxpoll 10
+
+driftfile /var/lib/chrony/drift
+logdir /var/log/chrony
+
+
+
+
+
+# server 169.254.169.123: This is the default NTP server provided by AWS.
+# driftfile and logdir: These paths are standard for chrony on Amazon Linux.

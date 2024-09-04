@@ -1,0 +1,20 @@
+---
+  - name: Apply common configuration to all nodes
+    hosts: centos
+    become: yes
+    roles:
+      - common
+
+  - name: Configure and deploy the webservers and application code
+    hosts: webserver
+    become: yes
+    roles:
+      - web
+
+  - name: Deploy MySQL and configure the databases
+    hosts: dbserver
+    become: yes
+    roles:
+      - db
+    vars_files:
+      - group_vars/centos

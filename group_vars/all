@@ -1,0 +1,18 @@
+
+---
+# Global variables
+
+# Apache HTTP port
+httpd_port: 80  # No change needed if using the default HTTP port
+
+# Time synchronization server
+ntpserver: 169.254.169.123  # This is the AWS NTP server for Amazon Linux instances
+
+
+
+
+# httpd_port: No changes needed if you're using the default port 80 for HTTP services. 
+# If you plan to change the port in the future, this variable can be easily updated.
+# ntpserver: The previous ntpserver: 192.168.1.2 was likely a local NTP server in your network. 
+# Since you're now working with AWS instances on Amazon Linux, 
+# you should use 169.254.169.123, which is the default NTP server provided by AWS for its EC2 instances.

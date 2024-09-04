@@ -1,0 +1,49 @@
+---
+- name: Debug mysql_port variable
+  debug:
+    msg: "The mysql_port is {{ mysql_port }}"
+
+- name: Install Python MySQL connector
+  apt:
+    name: python3-mysqldb
+    state: present
+
+- name: Install Mysql server
+  apt:
+    name: mysql-server
+    state: present
+
+
+- name: Create MySQL configuration file
+  template:
+    src: my.cnf.j2
+    dest: /etc/my.cnf
+  notify:
+    - restart MySQL
+
+- name: Create MySQL log file
+  file:
+    path: /var/log/mysql/mysql.log
+    state: touch
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Start MySQL service
+  service:
+    name: "{{ mysqlservice }}"
+    state: started
+    enabled: yes
+
+- name: Create Database
+  mysql_db:
+    name: "{{ dbname }}"
+    state: present
+
+- name: Create User
+  mysql_user:
+    name: "{{ dbuser }}"
+    password: "{{ upassword }}"
+    priv: '*.*:ALL,GRANT'
+    host: localhost
+    state: present
